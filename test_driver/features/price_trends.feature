@@ -1,8 +1,4 @@
-Gherkin
 Feature: Price Trends Analytics
-  As an analyst
-  I want to view price dynamics over time
-  So that I can identify the best time to buy or sell
 
   Scenario: Navigating to Price Trends
     Given I am on the "MarketOverviewScreen"
