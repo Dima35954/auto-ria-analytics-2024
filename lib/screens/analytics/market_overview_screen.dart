@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../models/car_listing.dart';
 import '../../utils/analytics_engine.dart';
 import '../../theme/app_theme.dart';
+import 'trends_ratings_screen.dart';
 
 class MarketOverviewScreen extends StatelessWidget {
   final List<CarListing> data;
@@ -16,7 +17,24 @@ class MarketOverviewScreen extends StatelessWidget {
     final priceTrend = engine.getMonthlyPriceTrend();
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Огляд Ринку")),
+      key: const Key('MarketOverviewScreen'),
+      appBar: AppBar(
+        title: const Text("Огляд Ринку"),
+        actions: [
+          IconButton(
+            key: const Key('TrendsTab'),
+            icon: const Icon(Icons.analytics),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TrendsRatingsScreen(data: data),
+                ),
+              );
+            },
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(

@@ -16,6 +16,7 @@ class TrendsRatingsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: const Text("Тренди та Рейтинги")),
+      key: const Key('TrendsRatingsScreen'),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
