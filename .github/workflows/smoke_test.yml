@@ -1,0 +1,31 @@
+name: Automated Smoke Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  infrastructure-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Dependencies
+        run: |
+          npm install -g selenium-side-runner
+          npm install -g chromedriver
+
+      - name: Start Web Server
+        run: |
+          nohup python3 -m http.server 8080 --directory build/web &
+          sleep 5
+
+      - name: Run Katalon/Selenium Suite
+        run: |
+          selenium-side-runner ./tests/project.side \
+          -c "browserName=chrome goog:chromeOptions.args=[--headless,--no-sandbox,--disable-gpu]"
