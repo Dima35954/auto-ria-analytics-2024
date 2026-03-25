@@ -1,16 +1,15 @@
-# car_sales_analytics
+# CarSalesAnalytic
 
-A new Flutter project.
+Програмний комплекс для аналітики ринку продажу автомобілів. Проєкт створюється в рамках дипломної роботи бакалавра (Сумський державний університет).
 
-## Getting Started
+## Опис проєкту
+Застосунок призначений для візуалізації та аналізу даних авторинку. Система обробляє масиви даних про продажі (бренд, ціна, рік випуску, технічні характеристики) та формує статистичні звіти, графіки динаміки цін, а також визначає тренди та рейтинги найпопулярніших моделей.
 
-This project is a starting point for a Flutter application.
+## Технологічний стек
+* **Framework:** Flutter (Dart)
+* **Архітектура:** Layered Architecture (Data, Domain/Logic, UI)
+* **Візуалізація даних:** fl_chart
+* **Тестування:** flutter_test, mockito
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Структура проєкту
+Основна бізнес-логіка та візуальні компоненти знаходяться у директорії `lib/`. Дані обробляються модулем `AnalyticsEngine`, який інкапсулює математичні підрахунки та агрегацію масивів об'єктів `CarListing`.
