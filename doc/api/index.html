@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="car_sales_analytics API docs, for the Dart programming language.">
+  <title>car_sales_analytics - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li class="self-crumb">car_sales_analytics package</li>
+  </ol>
+  <div class="self-name">car_sales_analytics</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
+</header>
+<main>
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="carsalesanalytic">CarSalesAnalytic</h1>
+<p>Програмний комплекс для аналітики ринку продажу автомобілів. Проєкт створюється в рамках дипломної роботи бакалавра (Сумський державний університет).</p>
+<h2 id="-">Опис проєкту</h2>
+<p>Застосунок призначений для візуалізації та аналізу даних авторинку. Система обробляє масиви даних про продажі (бренд, ціна, рік випуску, технічні характеристики) та формує статистичні звіти, графіки динаміки цін, а також визначає тренди та рейтинги найпопулярніших моделей.</p>
+<h2 id="--2">Технологічний стек</h2>
+<ul>
+<li><strong>Framework:</strong> Flutter (Dart)</li>
+<li><strong>Архітектура:</strong> Layered Architecture (Data, Domain/Logic, UI)</li>
+<li><strong>Візуалізація даних:</strong> fl_chart</li>
+<li><strong>Тестування:</strong> flutter_test, mockito</li>
+</ul>
+<h2 id="--3">Структура проєкту</h2>
+<p>Основна бізнес-логіка та візуальні компоненти знаходяться у директорії <code>lib/</code>. Дані обробляються модулем <code>AnalyticsEngine</code>, який інкапсулює математичні підрахунки та агрегацію масивів об'єктів <code>CarListing</code>.</p>
+<h2 id="---documentation-guidelines">Стандарти документування коду (Documentation Guidelines)</h2>
+<p>У цьому проєкті ми використовуємо вбудовані стандарти мови Dart для документування. Це дозволяє генерувати єдину базу знань за допомогою утиліти <code>dartdoc</code>.</p>
+<ol>
+<li><strong>Що документувати:</strong> Усі публічні класи, методи, змінні, моделі даних та UI-віджети.</li>
+<li><strong>Як документувати:</strong> Використовуйте потрійний слеш <code>///</code> безпосередньо перед оголошенням елемента.</li>
+<li><strong>Стиль:</strong> Перше речення має бути коротким і закінчуватися крапкою. Для посилань на інші параметри чи класи використовуйте квадратні дужки, наприклад: <code>[CarListing]</code>.</li>
+<li><strong>Контроль якості:</strong> Лінтер налаштовано на перевірку наявності документації (правило <code>public_member_api_docs</code>). Ваш код не пройде pre-commit хук, якщо публічні методи не задокументовані.</li>
+</ol>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="mock_data">
+  <span class="name"><a href="data_mock_data/">data\mock_data</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="main">
+  <span class="name"><a href="main/">main</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="car_listing">
+  <span class="name"><a href="models_car_listing/">models\car_listing</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="geo_condition_screen">
+  <span class="name"><a href="screens_analytics_geo_condition_screen/">screens\analytics\geo_condition_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="market_overview_screen">
+  <span class="name"><a href="screens_analytics_market_overview_screen/">screens\analytics\market_overview_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="summary_insights_screen">
+  <span class="name"><a href="screens_analytics_summary_insights_screen/">screens\analytics\summary_insights_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="tech_specs_screen">
+  <span class="name"><a href="screens_analytics_tech_specs_screen/">screens\analytics\tech_specs_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="trends_ratings_screen">
+  <span class="name"><a href="screens_analytics_trends_ratings_screen/">screens\analytics\trends_ratings_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="home_menu_screen">
+  <span class="name"><a href="screens_home_menu_screen/">screens\home_menu_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="login_screen">
+  <span class="name"><a href="screens_login_screen/">screens\login_screen</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="app_theme">
+  <span class="name"><a href="theme_app_theme/">theme\app_theme</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="analytics_engine">
+  <span class="name"><a href="utils_analytics_engine/">utils\analytics_engine</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+          <dt id="stat_card">
+  <span class="name"><a href="widgets_stat_card/">widgets\stat_card</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li class="self-crumb">car_sales_analytics package</li>
+</ol>
+
+    <h5 class="hidden-xs"><span class="package-name">car_sales_analytics</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="data_mock_data/">data\mock_data</a></li>
+      <li><a href="main/">main</a></li>
+      <li><a href="models_car_listing/">models\car_listing</a></li>
+      <li><a href="screens_analytics_geo_condition_screen/">screens\analytics\geo_condition_screen</a></li>
+      <li><a href="screens_analytics_market_overview_screen/">screens\analytics\market_overview_screen</a></li>
+      <li><a href="screens_analytics_summary_insights_screen/">screens\analytics\summary_insights_screen</a></li>
+      <li><a href="screens_analytics_tech_specs_screen/">screens\analytics\tech_specs_screen</a></li>
+      <li><a href="screens_analytics_trends_ratings_screen/">screens\analytics\trends_ratings_screen</a></li>
+      <li><a href="screens_home_menu_screen/">screens\home_menu_screen</a></li>
+      <li><a href="screens_login_screen/">screens\login_screen</a></li>
+      <li><a href="theme_app_theme/">theme\app_theme</a></li>
+      <li><a href="utils_analytics_engine/">utils\analytics_engine</a></li>
+      <li><a href="widgets_stat_card/">widgets\stat_card</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+</main>
+<footer>
+  <span class="no-break">
+    car_sales_analytics
+      1.0.0+1
+  </span>
+  
+</footer>
+
+
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
