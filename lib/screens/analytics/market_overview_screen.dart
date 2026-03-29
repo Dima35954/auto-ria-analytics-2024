@@ -5,9 +5,12 @@ import '../../utils/analytics_engine.dart';
 import '../../theme/app_theme.dart';
 import 'trends_ratings_screen.dart';
 
+/// Екран для відображення загального огляду ринку автомобілів.
 class MarketOverviewScreen extends StatelessWidget {
+  /// Дані про автомобілі, що використовуються для аналізу.
   final List<CarListing> data;
 
+  /// Створює екземпляр [MarketOverviewScreen] із заданими даними [data].
   const MarketOverviewScreen({super.key, required this.data});
 
   @override

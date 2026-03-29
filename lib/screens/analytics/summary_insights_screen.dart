@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import '../../models/car_listing.dart';
 import '../../utils/analytics_engine.dart';
 
+/// Екран для відображення підсумкових висновків та ключових інсайтів аналізу.
 class SummaryInsightsScreen extends StatelessWidget {
+  /// Список оголошень про продаж авто, на основі яких формуються підсумки.
   final List<CarListing> data;
 
+  /// Створює екземпляр [SummaryInsightsScreen] із заданими даними [data].
   const SummaryInsightsScreen({super.key, required this.data});
 
   @override

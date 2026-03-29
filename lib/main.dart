@@ -9,7 +9,9 @@ void main() async {
   runApp(const CarSalesAnalyticsApp());
 }
 
+/// Головний віджет застосунку для аналітики продажів автомобілів.
 class CarSalesAnalyticsApp extends StatelessWidget {
+  /// Створює екземпляр [CarSalesAnalyticsApp].
   const CarSalesAnalyticsApp({super.key});
 
   @override

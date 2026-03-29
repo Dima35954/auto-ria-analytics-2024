@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import '../theme/app_theme.dart';
 import 'home_menu_screen.dart';
 
+/// Екран авторизації користувача в системі аналітики.
 class LoginScreen extends StatefulWidget {
+  /// Створює екземпляр [LoginScreen].
   const LoginScreen({super.key});
 
   @override

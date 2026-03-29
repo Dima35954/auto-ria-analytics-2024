@@ -4,9 +4,12 @@ import '../../models/car_listing.dart';
 import '../../utils/analytics_engine.dart';
 import '../../theme/app_theme.dart';
 
+/// Екран для відображення географічного розподілу та технічного стану автомобілів.
 class GeoConditionScreen extends StatelessWidget {
+  /// Список оголошень про продаж авто для аналізу регіонів та стану.
   final List<CarListing> data;
 
+  /// Створює екземпляр [GeoConditionScreen] із заданими даними [data].
   const GeoConditionScreen({super.key, required this.data});
 
   @override

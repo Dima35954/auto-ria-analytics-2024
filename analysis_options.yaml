@@ -22,3 +22,4 @@ linter:
     - close_sinks
     - prefer_single_quotes
     - sort_child_properties_last
+    - public_member_api_docs

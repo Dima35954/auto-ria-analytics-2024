@@ -1,19 +1,35 @@
 import 'dart:math';
 import '../models/car_listing.dart';
 
+/// Клас для генерації тестових (mock) даних про автомобілі.
 class MockData {
   static final Random _random = Random();
 
+  /// Список популярних марок автомобілів.
   static const List<String> makes = ['Toyota', 'BMW', 'Audi', 'Volkswagen', 'Mercedes-Benz', 'Renault', 'Skoda', 'Ford', 'Nissan', 'Hyundai', 'KIA', 'Mazda'];
+  
+  /// Перелік типів палива.
   static const List<String> fuels = ['Бензин', 'Дизель', 'Електро', 'Гібрид', 'Газ/Бензин'];
+  
+  /// Основні регіони України для аналітики.
   static const List<String> regions = ['Київська', 'Львівська', 'Одеська', 'Дніпропетровська', 'Харківська'];
+  
+  /// Типи кузовів автомобілів.
   static const List<String> bodyTypes = ['Седан', 'SUV', 'Хетчбек', 'Універсал', 'Купе'];
+  
+  /// Країни-виробники.
   static const List<String> countries = ['Німеччина', 'Японія', 'США', 'Франція', 'Корея', 'Чехія'];
+  
+  /// Стан автомобіля (вживане, нове тощо).
   static const List<String> conditions = ['Вживане', 'Нове', 'Після ДТП'];
 
+  /// Типи трансмісій (коробок передач).
   static const List<String> transmissions = ['Автомат', 'Ручна', 'Робот', 'Варіатор', 'Тіптронік'];
+  
+  /// Типові об'єми двигунів у літрах.
   static const List<double> engineVolumes = [1.2, 1.4, 1.5, 1.6, 1.8, 2.0, 2.2, 2.4, 2.5, 3.0, 3.5, 4.0, 0.0];
 
+  /// Генерує список із 1000 випадкових оголошень про продаж авто.
   static List<CarListing> getCarListings() {
     return List.generate(1000, (index) {
       String make = makes[_random.nextInt(makes.length)];
@@ -22,11 +38,17 @@ class MockData {
       String country = 'Інша';
       if (['BMW', 'Audi', 'Volkswagen', 'Mercedes-Benz'].contains(make)) {
         country = 'Німеччина';
-      } else if (['Toyota', 'Nissan', 'Mazda'].contains(make)) { country = 'Японія'; }
-      else if (['Ford'].contains(make)) { country = 'США'; }
-      else if (['Renault'].contains(make)) { country = 'Франція'; }
-      else if (['Hyundai', 'KIA'].contains(make)) { country = 'Корея'; }
-      else if (['Skoda'].contains(make)) { country = 'Чехія'; }
+      } else if (['Toyota', 'Nissan', 'Mazda'].contains(make)) {
+        country = 'Японія';
+      } else if (['Ford'].contains(make)) {
+        country = 'США';
+      } else if (['Renault'].contains(make)) {
+        country = 'Франція';
+      } else if (['Hyundai', 'KIA'].contains(make)) {
+        country = 'Корея';
+      } else if (['Skoda'].contains(make)) {
+        country = 'Чехія';
+      }
 
       double engVol = fuel == 'Електро' ? 0.0 : engineVolumes[_random.nextInt(engineVolumes.length - 1)];
 

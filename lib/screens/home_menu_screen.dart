@@ -5,7 +5,9 @@ import 'analytics/summary_insights_screen.dart';
 import '../data/mock_data.dart';
 import 'analytics/trends_ratings_screen.dart';
 
+/// Головний екран меню, який надає доступ до різних категорій аналітики.
 class HomeMenuScreen extends StatelessWidget {
+  /// Створює екземпляр [HomeMenuScreen].
   const HomeMenuScreen({super.key});
 
   @override

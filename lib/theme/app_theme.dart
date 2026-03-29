@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// Клас, що містить налаштування теми застосунку.
 class AppTheme {
+  /// Основний колір бренду.
   static const Color primaryColor = Color(0xFFDB3022);
+  
+  /// Другорядний колір бренду (текст, іконки тощо).
   static const Color secondaryColor = Color(0xFF222222);
+  
+  /// Основний колір фону екранів.
   static const Color backgroundColor = Color(0xFFF9F9F9);
+  
+  /// Колір поверхні (наприклад, карток, панелей).
   static const Color surfaceColor = Colors.white;
+  
+  /// Колір для відображення повідомлень про помилки.
   static const Color errorColor = Color(0xFFB00020);
 
+  /// Повертає конфігурацію світлої теми застосунку.
   static ThemeData get lightTheme {
     return ThemeData(
       useMaterial3: true,

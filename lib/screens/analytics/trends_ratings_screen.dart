@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import '../../models/car_listing.dart';
 import '../../utils/analytics_engine.dart';
 
+/// Екран для відображення часових трендів та рейтингів популярності автомобілів.
 class TrendsRatingsScreen extends StatelessWidget {
+  /// Список оголошень про продаж авто для побудови рейтингів та трендів.
   final List<CarListing> data;
 
+  /// Створює екземпляр [TrendsRatingsScreen] із заданими даними [data].
   const TrendsRatingsScreen({super.key, required this.data});
 
   @override

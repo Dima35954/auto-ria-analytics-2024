@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 import '../../models/car_listing.dart';
 import '../../utils/analytics_engine.dart';
 
+/// Екран для відображення технічних характеристик автомобілів.
 class TechSpecsScreen extends StatelessWidget {
+  /// Дані про автомобілі для аналізу технічних параметрів.
   final List<CarListing> data;
 
+  /// Створює екземпляр [TechSpecsScreen] із заданими даними [data].
   const TechSpecsScreen({super.key, required this.data});
 
   @override

@@ -1,16 +1,27 @@
 import '../models/car_listing.dart';
 
+/// Статистика для конкретної моделі автомобіля.
 class CarModelStats {
+  /// Марка автомобіля.
   final String make;
+  /// Модель автомобіля.
   final String model;
+  /// Кількість знайдених оголошень.
   final int count;
+  /// Середня вартість.
   final double avgPrice;
+  /// Найстаріший рік випуску в цій вибірці.
   final int minYear;
+  /// Найновіший рік випуску в цій вибірці.
   final int maxYear;
+  /// Найпопулярніший тип пального.
   final String commonFuel;
+  /// Найпопулярніший тип трансмісії.
   final String commonTrans;
+  /// Середній об'єм двигуна.
   final double avgEngineVol;
 
+  /// Створює об'єкт статистики для моделі.
   CarModelStats(
       this.make,
       this.model,
@@ -24,11 +35,18 @@ class CarModelStats {
       );
 }
 
+/// Головний рушій аналітики застосунку.
+///
+/// Обробляє масив даних [CarListing] та генерує статистику, 
+/// тренди і топ-списки для відображення на дашбордах.
 class AnalyticsEngine {
+  /// Початковий набір даних для аналізу.
   final List<CarListing> data;
 
+  /// Ініціалізує аналізатор з переданим списком оголошень [data].
   AnalyticsEngine(this.data);
 
+  /// Підраховує кількість входжень певного атрибута.
   Map<T, int> getCountByAttribute<T>(T Function(CarListing) selector) {
     Map<T, int> counts = {};
     for (var item in data) {
@@ -38,6 +56,7 @@ class AnalyticsEngine {
     return counts;
   }
 
+  /// Аналізує та повертає динаміку середньої ціни за місяцями.
   List<MapEntry<int, double>> getMonthlyPriceTrend() {
     Map<int, List<double>> monthPrices = {};
     for (var car in data) {
@@ -57,6 +76,7 @@ class AnalyticsEngine {
     return trend;
   }
 
+  /// Розраховує та повертає топ-10 найпопулярніших моделей авто з їх детальною статистикою.
   List<CarModelStats> getTop10Models() {
     Map<String, List<CarListing>> grouped = {};
 
@@ -97,6 +117,7 @@ class AnalyticsEngine {
     return stats.take(10).toList();
   }
 
+  /// Допоміжний метод для знаходження найчастішого елемента у списку.
   String _getMostFrequent(List<String> items) {
     if (items.isEmpty) return '-';
     var counts = <String, int>{};
@@ -107,6 +128,7 @@ class AnalyticsEngine {
     return sorted.first.key;
   }
 
+  /// Формує текстовий інсайт щодо найпопулярнішого року випуску.
   String getYearTrendInsight() {
     var counts = getCountByAttribute((c) => c.year);
     if (counts.isEmpty) return 'Дані відсутні';
@@ -114,10 +136,12 @@ class AnalyticsEngine {
     return 'Найпопулярнішим роком випуску є ${sorted.first.key}.';
   }
 
+  /// Формує текстовий інсайт щодо розподілу типів коробок передач.
   String getTransmissionInsight() {
     return 'Автоматична КПП домінує над механікою.';
   }
 
+  /// Формує текстовий інсайт щодо найпопулярнішого об'єму двигуна.
   String getEngineInsight() {
     var counts = getCountByAttribute((c) => c.engineVolume);
     var sorted = counts.entries.where((e) => e.key > 0).toList()..sort((a, b) => b.value.compareTo(a.value));
@@ -125,18 +149,30 @@ class AnalyticsEngine {
     return "Найзатребуваніший об'єм двигуна — ${sorted.first.key} л.";
   }
 
+  /// Формує текстовий інсайт щодо бренду-лідера на ринку.
   String getMostPopularMakeInsight() {
     var counts = getCountByAttribute((c) => c.make);
     if (counts.isEmpty) return 'Немає даних';
     var sorted = counts.entries.toList()..sort((a, b) => b.value.compareTo(a.value));
     return 'Лідер ринку — ${sorted.first.key} (${((sorted.first.value/data.length)*100).toStringAsFixed(1)}%).';
   }
+  
+  /// Повертає інсайт щодо цінових трендів.
   String getPriceTrendInsight() => 'Пік цін припав на літні місяці.';
+  
+  /// Повертає інсайт щодо популярності типів пального.
   String getFuelInsight() => 'Частка гібридів зросла на 15%.';
+  
+  /// Повертає інсайт щодо географічного розподілу оголошень.
   String getRegionInsight() => 'Київська область — лідер за кількістю оголошень.';
+  
+  /// Повертає інсайт щодо стану автомобілів на ринку.
   String getConditionInsight() => '90% ринку — вживані автомобілі.';
+  
+  /// Повертає інсайт щодо надійності за країнами-виробниками.
   String getCountryQualityInsight() => 'Японські бренди лідирують у рейтингу надійності.';
 
+  /// Повертає словник із загальними топ-показниками ринку.
   Map<String, String> getTopLists() {
     return {
       'Топ Рік': '2019',
