@@ -16,20 +16,20 @@ class GeoConditionScreen extends StatelessWidget {
     final conditionCounts = engine.getCountByAttribute((c) => c.condition);
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Географія та Стан")),
+      appBar: AppBar(title: const Text('Географія та Стан')),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildSectionTitle("Регіональна Статистика"),
+            _buildSectionTitle('Регіональна Статистика'),
             const SizedBox(height: 16),
             _buildRegionList(regionCounts),
             const SizedBox(height: 16),
             _buildInsightCard(engine.getRegionInsight()),
 
             const SizedBox(height: 32),
-            _buildSectionTitle("Стан Автомобілів"),
+            _buildSectionTitle('Стан Автомобілів'),
             const SizedBox(height: 16),
             SizedBox(
               height: 250,
@@ -107,7 +107,7 @@ class GeoConditionScreen extends StatelessWidget {
     return entries.asMap().entries.map((e) {
       return PieChartSectionData(
         value: e.value.value.toDouble(),
-        title: "${((e.value.value / data.values.fold(0, (a,b)=>a+b)) * 100).toStringAsFixed(0)}%",
+        title: '${((e.value.value / data.values.fold(0, (a,b)=>a+b)) * 100).toStringAsFixed(0)}%',
         radius: 100,
         color: colors[e.key % colors.length],
         titleStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),

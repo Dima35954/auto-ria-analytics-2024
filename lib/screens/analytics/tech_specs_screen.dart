@@ -16,12 +16,12 @@ class TechSpecsScreen extends StatelessWidget {
     final engineCounts = engine.getCountByAttribute((c) => c.engineVolume);
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Технічні Характеристики")),
+      appBar: AppBar(title: const Text('Технічні Характеристики')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
           _buildChartSection(
-            "Тип коробки передач",
+            'Тип коробки передач',
             _buildBarChart(transCounts, Colors.blue),
             engine.getTransmissionInsight(),
           ),
@@ -33,7 +33,7 @@ class TechSpecsScreen extends StatelessWidget {
           ),
           const SizedBox(height: 24),
           _buildChartSection(
-            "Тип палива",
+            'Тип палива',
             _buildBarChart(fuelCounts, Colors.green),
             engine.getFuelInsight(),
           ),
@@ -48,7 +48,7 @@ class TechSpecsScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16),
-        boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 8, offset: const Offset(0, 4))],
+        boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 8, offset: Offset(0, 4))],
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

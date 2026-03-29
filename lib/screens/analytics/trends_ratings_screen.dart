@@ -15,14 +15,14 @@ class TrendsRatingsScreen extends StatelessWidget {
     final top10 = engine.getTop10Models();
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Тренди та Рейтинги")),
+      appBar: AppBar(title: const Text('Тренди та Рейтинги')),
       key: const Key('TrendsRatingsScreen'),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Популярність за роком випуску", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text('Популярність за роком випуску', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
             const SizedBox(height: 24),
 
             SizedBox(
@@ -34,8 +34,8 @@ class TrendsRatingsScreen extends StatelessWidget {
 
             const SizedBox(height: 40),
 
-            const Text("ТОП-10 Найпопулярніших Авто Сезону", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-            const Text("Гортайте таблицю вправо ->", style: TextStyle(fontSize: 12, color: Colors.grey)),
+            const Text('ТОП-10 Найпопулярніших Авто Сезону', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+            const Text('Гортайте таблицю вправо ->', style: TextStyle(fontSize: 12, color: Colors.grey)),
             const SizedBox(height: 16),
             _buildTop10Table(top10),
             const SizedBox(height: 40),
@@ -47,7 +47,7 @@ class TrendsRatingsScreen extends StatelessWidget {
 
   Widget _buildYearChart(Map<int, int> data) {
     var sorted = data.entries.toList()..sort((a, b) => a.key.compareTo(b.key));
-    if (sorted.isEmpty) return const Center(child: Text("Немає даних"));
+    if (sorted.isEmpty) return const Center(child: Text('Немає даних'));
 
     double maxY = sorted.map((e) => e.value).reduce((a, b) => a > b ? a : b).toDouble();
 
@@ -110,7 +110,7 @@ class TrendsRatingsScreen extends StatelessWidget {
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: DataTable(
-            headingRowColor: MaterialStateProperty.resolveWith((states) => Colors.indigo[50]!),
+            headingRowColor: WidgetStateProperty.resolveWith((states) => Colors.indigo[50]!),
             dataRowMinHeight: 40,
             columnSpacing: 24,
             columns: const [

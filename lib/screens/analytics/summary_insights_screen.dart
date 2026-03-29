@@ -12,11 +12,11 @@ class SummaryInsightsScreen extends StatelessWidget {
     final engine = AnalyticsEngine(data);
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Підсумки Аналізу")),
+      appBar: AppBar(title: const Text('Підсумки Аналізу')),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          _buildHeader("Ключові висновки 2024"),
+          _buildHeader('Ключові висновки 2024'),
           const SizedBox(height: 10),
           _buildSummaryCard(engine.getPriceTrendInsight(), Icons.trending_up, Colors.blue),
           _buildSummaryCard(engine.getYearTrendInsight(), Icons.calendar_today, Colors.purple),

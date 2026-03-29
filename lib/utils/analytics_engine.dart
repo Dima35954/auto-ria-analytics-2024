@@ -61,7 +61,7 @@ class AnalyticsEngine {
     Map<String, List<CarListing>> grouped = {};
 
     for (var car in data) {
-      String key = "${car.make}|${car.model}";
+      String key = '${car.make}|${car.model}';
       if (!grouped.containsKey(key)) grouped[key] = [];
       grouped[key]!.add(car);
     }
@@ -98,52 +98,51 @@ class AnalyticsEngine {
   }
 
   String _getMostFrequent(List<String> items) {
-    if (items.isEmpty) return "-";
+    if (items.isEmpty) return '-';
     var counts = <String, int>{};
-    for (var i in items) counts[i] = (counts[i] ?? 0) + 1;
+    for (var i in items) {
+      counts[i] = (counts[i] ?? 0) + 1;
+    }
     var sorted = counts.entries.toList()..sort((a, b) => b.value.compareTo(a.value));
     return sorted.first.key;
   }
 
   String getYearTrendInsight() {
     var counts = getCountByAttribute((c) => c.year);
-    if (counts.isEmpty) return "Дані відсутні";
+    if (counts.isEmpty) return 'Дані відсутні';
     var sorted = counts.entries.toList()..sort((a, b) => b.value.compareTo(a.value));
-    return "Найпопулярнішим роком випуску є ${sorted.first.key}.";
+    return 'Найпопулярнішим роком випуску є ${sorted.first.key}.';
   }
 
   String getTransmissionInsight() {
-    var counts = getCountByAttribute((c) => c.transmission);
-    int auto = counts['Автомат'] ?? 0;
-    int manual = counts['Ручна'] ?? 0;
-    return "Автоматична КПП домінує над механікою.";
+    return 'Автоматична КПП домінує над механікою.';
   }
 
   String getEngineInsight() {
     var counts = getCountByAttribute((c) => c.engineVolume);
     var sorted = counts.entries.where((e) => e.key > 0).toList()..sort((a, b) => b.value.compareTo(a.value));
-    if (sorted.isEmpty) return "Дані відсутні";
+    if (sorted.isEmpty) return 'Дані відсутні';
     return "Найзатребуваніший об'єм двигуна — ${sorted.first.key} л.";
   }
 
   String getMostPopularMakeInsight() {
     var counts = getCountByAttribute((c) => c.make);
-    if (counts.isEmpty) return "Немає даних";
+    if (counts.isEmpty) return 'Немає даних';
     var sorted = counts.entries.toList()..sort((a, b) => b.value.compareTo(a.value));
-    return "Лідер ринку — ${sorted.first.key} (${((sorted.first.value/data.length)*100).toStringAsFixed(1)}%).";
+    return 'Лідер ринку — ${sorted.first.key} (${((sorted.first.value/data.length)*100).toStringAsFixed(1)}%).';
   }
-  String getPriceTrendInsight() => "Пік цін припав на літні місяці.";
-  String getFuelInsight() => "Частка гібридів зросла на 15%.";
-  String getRegionInsight() => "Київська область — лідер за кількістю оголошень.";
-  String getConditionInsight() => "90% ринку — вживані автомобілі.";
-  String getCountryQualityInsight() => "Японські бренди лідирують у рейтингу надійності.";
+  String getPriceTrendInsight() => 'Пік цін припав на літні місяці.';
+  String getFuelInsight() => 'Частка гібридів зросла на 15%.';
+  String getRegionInsight() => 'Київська область — лідер за кількістю оголошень.';
+  String getConditionInsight() => '90% ринку — вживані автомобілі.';
+  String getCountryQualityInsight() => 'Японські бренди лідирують у рейтингу надійності.';
 
   Map<String, String> getTopLists() {
     return {
-      "Топ Рік": "2019",
-      "Топ КПП": "Автомат",
-      "Топ Двигун": "2.0 л",
-      "Топ Марка": "Toyota",
+      'Топ Рік': '2019',
+      'Топ КПП': 'Автомат',
+      'Топ Двигун': '2.0 л',
+      'Топ Марка': 'Toyota',
     };
   }
 }

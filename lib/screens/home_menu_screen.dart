@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import '../theme/app_theme.dart';
 import 'analytics/market_overview_screen.dart';
 import 'analytics/tech_specs_screen.dart';
 import 'analytics/summary_insights_screen.dart';
 import '../data/mock_data.dart';
-import 'analytics/geo_condition_screen.dart';
 import 'analytics/trends_ratings_screen.dart';
 
 class HomeMenuScreen extends StatelessWidget {
@@ -25,7 +23,7 @@ class HomeMenuScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              "Оберіть категорію аналізу:",
+              'Оберіть категорію аналізу:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
@@ -37,28 +35,28 @@ class HomeMenuScreen extends StatelessWidget {
                 children: [
                   _buildMenuCard(
                     context,
-                    title: "Ринок та Ціни",
+                    title: 'Ринок та Ціни',
                     icon: Icons.trending_up,
                     color: Colors.blue,
                     onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => MarketOverviewScreen(data: data))),
                   ),
                   _buildMenuCard(
                     context,
-                    title: "Тех. Характеристики",
+                    title: 'Тех. Характеристики',
                     icon: Icons.speed,
                     color: Colors.orange,
                     onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => TechSpecsScreen(data: data))),
                   ),
                   _buildMenuCard(
                     context,
-                    title: "Тренди та Рейтинги",
+                    title: 'Тренди та Рейтинги',
                     icon: Icons.bar_chart,
                     color: Colors.indigo,
                     onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => TrendsRatingsScreen(data: data))),
                   ),
                   _buildMenuCard(
                     context,
-                    title: "Підсумки та ТОП",
+                    title: 'Підсумки та ТОП',
                     icon: Icons.star,
                     color: Colors.purple,
                     onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => SummaryInsightsScreen(data: data))),

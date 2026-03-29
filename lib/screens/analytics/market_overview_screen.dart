@@ -19,7 +19,7 @@ class MarketOverviewScreen extends StatelessWidget {
     return Scaffold(
       key: const Key('MarketOverviewScreen'),
       appBar: AppBar(
-        title: const Text("Огляд Ринку"),
+        title: const Text('Огляд Ринку'),
         actions: [
           IconButton(
             key: const Key('TrendsTab'),
@@ -40,7 +40,7 @@ class MarketOverviewScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildSectionTitle("Розподіл за Брендами"),
+            _buildSectionTitle('Розподіл за Брендами'),
             const SizedBox(height: 20),
             SizedBox(
               height: 200,
@@ -64,7 +64,7 @@ class MarketOverviewScreen extends StatelessWidget {
             _buildInsightCard(engine.getMostPopularMakeInsight()),
 
             const SizedBox(height: 32),
-            _buildSectionTitle("Динаміка середньої ціни (2024)"),
+            _buildSectionTitle('Динаміка середньої ціни (2024)'),
             const SizedBox(height: 20),
 
             // --- ЛІНІЙНИЙ ГРАФІК (ОНОВЛЕНИЙ) ---

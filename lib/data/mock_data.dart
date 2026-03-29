@@ -20,12 +20,13 @@ class MockData {
       String fuel = fuels[_random.nextInt(fuels.length)];
 
       String country = 'Інша';
-      if (['BMW', 'Audi', 'Volkswagen', 'Mercedes-Benz'].contains(make)) country = 'Німеччина';
-      else if (['Toyota', 'Nissan', 'Mazda'].contains(make)) country = 'Японія';
-      else if (['Ford'].contains(make)) country = 'США';
-      else if (['Renault'].contains(make)) country = 'Франція';
-      else if (['Hyundai', 'KIA'].contains(make)) country = 'Корея';
-      else if (['Skoda'].contains(make)) country = 'Чехія';
+      if (['BMW', 'Audi', 'Volkswagen', 'Mercedes-Benz'].contains(make)) {
+        country = 'Німеччина';
+      } else if (['Toyota', 'Nissan', 'Mazda'].contains(make)) { country = 'Японія'; }
+      else if (['Ford'].contains(make)) { country = 'США'; }
+      else if (['Renault'].contains(make)) { country = 'Франція'; }
+      else if (['Hyundai', 'KIA'].contains(make)) { country = 'Корея'; }
+      else if (['Skoda'].contains(make)) { country = 'Чехія'; }
 
       double engVol = fuel == 'Електро' ? 0.0 : engineVolumes[_random.nextInt(engineVolumes.length - 1)];
 

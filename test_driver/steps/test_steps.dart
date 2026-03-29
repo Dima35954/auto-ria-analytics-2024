@@ -4,7 +4,7 @@ import 'package:gherkin/gherkin.dart';
 
 class CheckWidgetPresent extends Given1WithWorld<String, FlutterWorld> {
   @override
-  RegExp get pattern => RegExp(r"I should see the widget {string}");
+  RegExp get pattern => RegExp(r'I should see the widget {string}');
 
   @override
   Future<void> executeStep(String key) async {
@@ -18,7 +18,7 @@ class CheckWidgetPresent extends Given1WithWorld<String, FlutterWorld> {
 
 class TapButton extends When1WithWorld<String, FlutterWorld> {
   @override
-  RegExp get pattern => RegExp(r"I tap the {string} button");
+  RegExp get pattern => RegExp(r'I tap the {string} button');
 
   @override
   Future<void> executeStep(String key) async {
