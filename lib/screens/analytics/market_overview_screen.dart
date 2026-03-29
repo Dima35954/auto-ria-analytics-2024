@@ -126,7 +126,7 @@ class MarketOverviewScreen extends StatelessWidget {
                       color: AppTheme.primaryColor,
                       barWidth: 3,
                       dotData: const FlDotData(show: true), // Показуємо точки
-                      belowBarData: BarAreaData(show: true, color: AppTheme.primaryColor.withOpacity(0.1)),
+                      belowBarData: BarAreaData(show: true, color: AppTheme.primaryColor.withValues(alpha: 0.1)),
                     ),
                   ],
                 ),
