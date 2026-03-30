@@ -23,7 +23,6 @@
 4. **Контроль якості:** Лінтер налаштовано на перевірку наявності документації (правило `public_member_api_docs`). Ваш код не пройде pre-commit хук, якщо публічні методи не задокументовані.
 
 **Текст для додавання:**
-```markdown
 ## Документування коду
 У проєкті дотримуються стандарти [Effective Dart: Documentation](https://dart.dev/guides/language/effective-dart/documentation).
 
@@ -32,3 +31,26 @@
 2. Використовуйте квадратні дужки `[]` для посилання на інші класи або параметри.
 3. Перед комітом обов'язково запускайте `flutter analyze` для перевірки наявності документації.
 
+## 🛠 Інструкція для розробників (Onboarding)
+
+Для швидкого старту розробки на чистій ОС виконайте наступні кроки:
+
+### 1. Необхідне ПЗ
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) (версія 3.19+)
+- Git
+- IDE: VS Code (з плагінами Flutter та Dart) або Android Studio
+
+### 2. Налаштування середовища
+1. Додайте шлях до директорії `flutter/bin` у системну змінну PATH.
+2. Виконайте команду `flutter doctor` у терміналі для перевірки готовності системи.
+
+### 3. Запуск проєкту
+# 1. Клонування репозиторію
+git clone [https://github.com/Dima35954/auto-ria-analytics-2024.git](https://github.com/Dima35954/auto-ria-analytics-2024.git)
+cd auto-ria-analytics-2024
+
+# 2. Встановлення залежностей
+flutter pub get
+
+# 3. Запуск у режимі розробки (Web)
+flutter run -d chrome
