@@ -4,13 +4,15 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'utils/logger_service.dart';
 // import 'screens/login_screen.dart'; // Ваші імпорти
 // import 'theme/app_theme.dart';
+import 'utils/performance_tester.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting('uk_UA', null);
   
-  // Ініціалізація логера
   AppLogger.init();
+
+  PerformanceTester.runBenchmark();
 
   // 75% & 100%: Гарантоване перехоплення помилок UI
   FlutterError.onError = (FlutterErrorDetails details) {
